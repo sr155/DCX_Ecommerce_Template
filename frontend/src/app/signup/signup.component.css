@@ -1,0 +1,24 @@
+h2{
+    margin-left: 43px;
+   text-align: center;
+}
+label{
+    margin-left: 43%;
+    
+}
+input{
+    
+    background-color:lightgrey;
+    
+}
+button{
+    margin-left: 43%;
+}
+.alert{
+    text-align: center;
+    color: red;
+    
+}
+small{
+    padding: 1px;
+}

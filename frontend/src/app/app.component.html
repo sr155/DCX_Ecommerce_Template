@@ -1,0 +1,50 @@
+<html>
+  
+   
+  <meta name="viewport" content="width=device-width,intial-scale=1.0"/>
+  
+   <body >
+   
+    <div id="header" >
+  <span><h1><i class="fa fa-tag" aria-hidden="true"></i>DCX-App <span class="header">Store</span> <span></span></h1></span>
+  <div class="sr">
+  <form [formGroup]="requiredForm" novalidate (ngSubmit)="submit" id="search" class="form-inline">
+      <!-- <label>Email <input type="text" name="s-user" id="s-user"></label>&nbsp;&nbsp;
+      <label>Password <input type="text" name="s-pass" id="s-pass"></label>&nbsp;&nbsp;&nbsp;
+      -->
+      
+        <label>Email:
+          <input   formControlName="email">
+        </label>
+       <small *ngIf="requiredForm.controls['email'].invalid && requiredForm.controls['email'].touched" class="alert">*Enter correct email.
+          <small *ngIf="requiredForm.controls['email'].errors?.['required']">
+          <!-- Email is required. -->
+          </small>
+       </small>
+     
+        <label>Password: </label>
+          <input type="password"    formControlName="password">
+      <small *ngIf="requiredForm.controls['password'].invalid && requiredForm.controls['password'].touched" class="alert">*Enter strong password.
+          <small *ngIf="requiredForm.controls['password'].errors?.['required']">
+          <!-- Password is required. -->
+          </small>
+        </small> &nbsp;&nbsp;
+        <button type="submit" [disabled]='requiredForm.invalid' routerLink="/products" routerLinkActive="active"  (click)="submit()">Login</button>
+      
+    </form>
+    
+  </div>
+  </div>
+  <div class="h2">BootStrap Ecommerce Template  </div>
+  <div class="login-container login">
+    
+    </div>
+  </body>
+  </html>
+ 
+ 
+  <app-navbar></app-navbar>
+  <div class="router-outlet">
+  <router-outlet></router-outlet>
+  </div>
+  <app-footer></app-footer>

@@ -1,0 +1,59 @@
+
+<!-- <form [formGroup]="loginForm" novalidate>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Email address</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" formControlName="email" placeholder="Enter email">
+      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+      <div *ngIf="loginForm.controls['email'].invalid && (loginForm.controls['email'].dirty || loginForm.controls['name'].touched)" class="alert alert-danger">
+        <div *ngIf="loginForm.controls['email'].errors.required">
+        Name is required.
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Password</label>
+      <input type="password" class="form-control" id="exampleInputPassword1" formControlName="password" placeholder="Password">
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Submit</button>
+  
+  </form> -->
+
+  <div>
+    <h2>
+      Sign Up Form
+    </h2>
+    <form [formGroup]="requiredForm" novalidate (ngSubmit)="submit">
+          <div class="form-group">
+            <label>Name:
+              <input class="form-control" pattern="[A-Za-z]{1,32}" formControlName="name">
+            </label>
+          </div>
+          <div *ngIf="requiredForm.controls['name'].invalid && requiredForm.controls['name'].touched" class="alert ">
+              <div *ngIf="requiredForm.controls['name'].errors?.['required']">
+              *Name is required.
+            </div>
+          </div>
+          <div class="form-group">
+             <label >Email:
+               <input class="form-control" formControlName="email">
+             </label>
+           </div>
+           <div *ngIf="requiredForm.controls['email'].invalid && requiredForm.controls['email'].touched" class="alert">*Enter correct email.
+               <div *ngIf="requiredForm.controls['email'].errors?.['required']">
+               Email is required.
+             </div>
+           </div>
+           <div class="form-group">
+             <label >Password:
+               <input type="password" class="form-control"   formControlName="password">
+             </label>
+           </div>
+           <div *ngIf="requiredForm.controls['password'].invalid && requiredForm.controls['password'].touched" class="alert ">*Enter minimum one uppercase,one lowercase,one numeric value and one special character.
+               <div *ngIf="requiredForm.controls['password'].errors?.['required']">
+               Password is required.
+             </div>
+           </div><br/>
+           <button  [disabled]='requiredForm.invalid' (click)="submit()">Register</button>
+    </form> <br/><br/><br/><br/>
+  
+  </div>

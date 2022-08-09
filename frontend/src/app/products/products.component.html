@@ -1,0 +1,16 @@
+<div class="container mt-5 mb-5">
+    <div class="row">
+        <div class="col-lg-4" *ngFor="let p of productData">
+            <div class="productbox mt-3 mb-3">
+                <img src="{{p.productImg}}">
+                <h1>{{p.productName}}</h1>
+                <p>{{p.productPrice | currency:'INR'}}</p>
+                <p>{{p.productDetails}}</p>
+                
+                <br>
+                <!-- <a class="buybtn" [routerLink]="['/products',p.id]" (click)=addtocart(p)>Add To Cart </a> -->
+                <a class="buybtn">Add To Cart </a>
+            </div>
+        </div>
+    </div>
+</div>
